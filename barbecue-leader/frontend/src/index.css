@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #030712;
+  --color-surface: #111827;
+  --color-surface-2: #1f2937;
+  --color-border: #374151;
+  --color-text: #f9fafb;
+  --color-text-muted: #9ca3af;
+  --color-accent: #f97316;
+  --color-accent-hover: #ea580c;
+  --color-accent-subtle: rgba(249,115,22,0.1);
+}
+
+* {
+  transition: background-color 0.2s ease, border-color 0.15s ease;
+}
+
+body {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}
+
+/* Override Tailwind bg classes avec variables CSS */
+.bg-gray-950, .bg-gray-900 { background-color: var(--color-surface) !important; }
+.bg-gray-800 { background-color: var(--color-surface-2) !important; }
+.bg-gray-700 { background-color: var(--color-border) !important; }
+.border-gray-800, .border-gray-700 { border-color: var(--color-border) !important; }
+.text-white { color: var(--color-text) !important; }
+.text-gray-400, .text-gray-500 { color: var(--color-text-muted) !important; }
+.text-gray-300 { color: var(--color-text) !important; }
+.divide-gray-800\/50 > * { border-color: var(--color-border) !important; }
+
+/* Tables et hover */
+.hover\:bg-gray-800\/30:hover { background-color: color-mix(in srgb, var(--color-surface-2) 30%, transparent) !important; }
+.bg-gray-800\/30 { background-color: color-mix(in srgb, var(--color-surface-2) 30%, transparent) !important; }
+.bg-gray-800\/10 { background-color: color-mix(in srgb, var(--color-surface-2) 10%, transparent) !important; }
+.bg-gray-800\/20 { background-color: color-mix(in srgb, var(--color-surface-2) 20%, transparent) !important; }
+
+/* Inputs */
+input, select, textarea {
+  background-color: var(--color-surface-2) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: var(--color-text-muted) !important;
+}
+
+/* t-classes utilitaires */
+.t-bg { background-color: var(--color-bg) !important; }
+.t-surface { background-color: var(--color-surface) !important; }
+.t-surface-2 { background-color: var(--color-surface-2) !important; }
+.t-border { border-color: var(--color-border) !important; }
+.t-text { color: var(--color-text) !important; }
+.t-text-muted { color: var(--color-text-muted) !important; }
+.t-accent { background-color: var(--color-accent) !important; }
+.t-accent-text { color: var(--color-accent) !important; }
+.t-accent-subtle { background-color: var(--color-accent-subtle) !important; }
